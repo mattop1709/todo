@@ -1,0 +1,64 @@
+<ion-header translucent>
+  <ion-toolbar color="light">
+    <ion-title>
+      Destination
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen color="light">
+
+  <!--- card section -->
+  <ion-card class="fancy-card" mode="ios" button="true" [routerLink]="['/home']">
+
+    <!--- card header section -->
+   <img src={{url}}/>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size='1' class="ion-align-self-center">
+            <ion-icon name="airplane-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-card-title color="secondary">Paris, France</ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+   
+    <!--- card header section end-->
+
+       <!--- card chip section -->
+       <ion-chip color="danger" [outline]="true">
+      <ion-icon name="walk-sharp" color="danger"></ion-icon>
+      <ion-label>Walking Distance</ion-label>
+    </ion-chip>
+    <ion-chip color="success" [outline]="true">
+      <ion-icon name="train-sharp" color="success" ></ion-icon>
+      <ion-label>MRT/ LRT/ Monorail</ion-label>
+    </ion-chip>
+    <ion-chip color="tertiary" [outline]="true">
+      <ion-icon name="car-sport-sharp" color="tertiary" ></ion-icon>
+      <ion-label>Rental Cars</ion-label>
+    </ion-chip>
+    <ion-chip color="primary" [outline]="true">
+      <ion-icon name="bus-sharp" color="primary" ></ion-icon>
+      <ion-label>Tour Bus</ion-label>
+    </ion-chip>
+    <ion-chip color="medium" [outline]="true">
+      <ion-icon name="bed-sharp" color="medium" ></ion-icon>
+      <ion-label>Hotel</ion-label>
+    </ion-chip>
+    <!--- card chip section end-->
+    
+    <!--- card content section -->
+    <ion-card-content>
+      Paris, the capital of France, is located in northern France on both banks of the Seine River, 145 km (90 mi.) from the river's mouth on the English Channel.
+    </ion-card-content>
+     <!--- card content section end-->
+
+    </ion-card>
+    <!--- card section end -->
+
+</ion-content>

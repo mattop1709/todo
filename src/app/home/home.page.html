@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen>
 
-<ion-content [fullscreen]="true">
+  <!-- header -->
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Places To Go</ion-title>
     </ion-toolbar>
   </ion-header>
+   <!-- header end -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+   <!-- button back -->
+  <ion-button [routerLink]="['/']">Back</ion-button>
+
+  <!-- input -->
+  <ion-input 
+    placeholder="enter todo" 
+    autofocus="true" 
+    (ionChange)="InputTodo($event.target.value)"></ion-input>
+  <!-- input end -->
+
+   <!-- button add todo -->
+  <ion-button (click)="createTodo()" color="secondary" expand="block">
+    Add todo
+    <ion-icon name="add-circle" slot="start"></ion-icon>
+  </ion-button>
+  <!-- button add todo -->
+
+  <!-- todo -->
+  <ion-list lines="none">
+    <ion-item  *ngFor="let todo of todos" >
+      <ion-icon (click)="toggleTodo(todo)" [name]="getIcon(todo)" slot="start">
+      </ion-icon>
+      <div slot="start">
+        {{todo.note}}
+      </div>
+      <div slot="end">
+        <ion-icon (click)="removeTodo(todo.title)" name="close-outline"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+  <!-- todo end -->
+
 </ion-content>
